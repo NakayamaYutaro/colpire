@@ -19,18 +19,16 @@ argvs = sys.argv
 argc = len(argvs)
 
 if(argc!=2):
-	print 'Usage #python %s Brand' % argvs[0]
+	print 'Usage #python %s brand' % argvs[0]
 	quit()
 
 print 'The latest brand of %s ...' % argvs[1]
 brand = argvs[1]
 
 now = datetime.now()
-
 start =	datetime(now.year,now.month,now.day - 10)
 end	= datetime(now.year,now.month,now.day)
 
-toyota = DataReader('TM','morningstar',start,end)
 #now_source = datetime.now().strftime('%Y-%m-%d')
 #now = datetime.strptime(now_source,'%Y-%m-%d %H:%M:%S')
 #start = now
@@ -39,7 +37,3 @@ toyota = DataReader('TM','morningstar',start,end)
 
 getStockValue_class = getValue()
 getStockValue_class.read(brand,start,end)
-
-print toyota.head(5)
-toyota['Close'].plot(title=brand,grid=True)
-plt.savefig('data/' + brand + '.png')
