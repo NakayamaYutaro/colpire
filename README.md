@@ -13,15 +13,15 @@ So we create system through New York Stock Exchange(NYSE) and morningstar API.
 Detail and How to create virtual environment on Python.
 <https://qiita.com/H-A-L/items/5d5a2ef73be8d140bdf3>
 
-$ sudo apt-get install python python3 python 3.6
-$ sudo apt-get install virtualenv 
+$ sudo apt-get install python python3 python 3.6  
+$ sudo apt-get install virtualenv
 
 After change directory to stockTrade/bin
 
-$ pip install scikit-learn
-$ pip install pandas
-$ pip install <pandas_datareader>
-$ pip install matplotlib inline
+$ pip install scikit-learn  
+$ pip install pandas  
+$ pip install <pandas_datareader>  
+$ pip install matplotlib inline  
 
 
 ## Directory structure
