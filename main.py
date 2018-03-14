@@ -1,22 +1,45 @@
 #-*-coding: utf-8 -*-
 import sys
 import pandas as pd
-import getData
+import numpy as np
+import matplotlib.pyplot as plt
+import getCell
 import getTime
+import datetime
+import matplotlib
+from datetime import datetime, date, time 
+from datetime import timedelta
+from pandas	import Series, DataFrame
+from pandas_datareader.data import DataReader
 from getTime import getYDH
-from getData import getTable
+from getCell import getTable
+from getStockValue import getValue
+
 argvs = sys.argv
 argc = len(argvs)
 
-
 if(argc!=2):
-	print 'Usage #python %s filename' % argvs[0]
+	print 'Usage #python %s Brand' % argvs[0]
 	quit()
 
-print 'The content of %s ...n' % argvs[1]
+print 'The latest brand of %s ...' % argvs[1]
+brand = argvs[1]
 
-f = open(argvs[1])
+now = datetime.now()
 
-getYDH_class = getYDH()
-getTable_class = getTable()
-getTable_class.getAll(f)
+start =	datetime(now.year,now.month,now.day - 10)
+end	= datetime(now.year,now.month,now.day)
+
+toyota = DataReader('TM','morningstar',start,end)
+#now_source = datetime.now().strftime('%Y-%m-%d')
+#now = datetime.strptime(now_source,'%Y-%m-%d %H:%M:%S')
+#start = now
+#end_culc = now - timedelta(days=-5)
+#end 	= end_culc.strftime('%Y-%m-%d')
+
+getStockValue_class = getValue()
+getStockValue_class.read(brand,start,end)
+
+print toyota.head(5)
+toyota['Close'].plot(title=brand,grid=True)
+plt.savefig('data/' + brand + '.png')

@@ -14,6 +14,9 @@ After change directory to stockTrade/bin
 
 * pip install scikit-learn
 * pip install pandas
+* pip install <pandas_datareader>
+* pip install matplotlib inline
+
 
 ## Directory structure
 * bin           --- Python,pip,etc executable file.
