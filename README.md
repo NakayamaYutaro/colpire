@@ -15,6 +15,7 @@ Detail and How to create virtual environment on Python.
 
 $ sudo apt-get install python python3 python 3.6  
 $ sudo apt-get install virtualenv
+$ sudo apt-get install tk-dev
 
 After change directory to stockTrade/bin
 
@@ -29,13 +30,19 @@ $ pip install matplotlib inline
 * include       --- C header files
 * lib/python2.7 --- Python interpreter
 * local           
+* data          --- Save image files
  - getData.py
- - getTime.py 					
+ - getTime.py 				
+ - getStockValue.py	
  - main.py
  - pip-selfcheck.json
  - sample.csv
 
 ## Execution method
+First, after change directory to stockTrade/bin/ and do the following command.
+$ source activate
+
+Second, after change directory to stockTrade/ and do the following command.
 $ python main.py <Stock_Brand>
 
 
