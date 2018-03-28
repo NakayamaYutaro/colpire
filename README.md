@@ -43,6 +43,8 @@ First, after change directory to stockTrade/bin/ and do the following command.
 **$ source activate**
 
 Second, after change directory to stockTrade/ and do the following command.  
-**$ python main.py <Stock_Brand>**
+**$ python main.py <Stock_Brand>**  
+
+(https://github.com/NakayamaYutaro/stockTrade/blob/master/data/img/sampleTM_exec.png "実行結果")
 
 
