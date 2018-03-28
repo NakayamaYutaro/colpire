@@ -26,17 +26,17 @@ $ pip install matplotlib inline
 
 
 ## Directory structure
-+ bin           --- Python,pip,etc executable file.
-+ include       --- C header files
-+ lib/python2.7 --- Python interpreter
-+ local           
-+ data          --- Save image files
- - getData.py
- - getTime.py 				
- - getStockValue.py	
- - main.py
- - pip-selfcheck.json
- - sample.csv
+bin           --- Python,pip,etc executable file.
+include       --- C header files
+lib/python2.7 --- Python interpreter
+local           
+data/img      --- Save image files
+   -getData.py
+   -getTime.py 				
+	 -getStockValue.py	
+   -main.py
+   -pip-selfcheck.json
+   -sample.csv
 
 ## Execution method
 First, after change directory to stockTrade/bin/ and do the following command.  
@@ -45,6 +45,6 @@ First, after change directory to stockTrade/bin/ and do the following command.
 Second, after change directory to stockTrade/ and do the following command.  
 **$ python main.py <Stock_Brand>**  
 
-(https://github.com/NakayamaYutaro/stockTrade/blob/master/data/img/sampleTM_exec.png "実行結果")
+![実行結果](https://github.com/NakayamaYutaro/stockTrade/blob/master/data/img/sampleTM_exec.png "実行結果")
 
 
