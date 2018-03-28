@@ -26,11 +26,11 @@ $ pip install matplotlib inline
 
 
 ## Directory structure
-* bin           --- Python,pip,etc executable file.
-* include       --- C header files
-* lib/python2.7 --- Python interpreter
-* local           
-* data          --- Save image files
++ bin           --- Python,pip,etc executable file.
++ include       --- C header files
++ lib/python2.7 --- Python interpreter
++ local           
++ data          --- Save image files
  - getData.py
  - getTime.py 				
  - getStockValue.py	
@@ -39,10 +39,10 @@ $ pip install matplotlib inline
  - sample.csv
 
 ## Execution method
-First, after change directory to stockTrade/bin/ and do the following command.
-$ source activate
+First, after change directory to stockTrade/bin/ and do the following command.  
+**$ source activate**
 
-Second, after change directory to stockTrade/ and do the following command.
-$ python main.py <Stock_Brand>
+Second, after change directory to stockTrade/ and do the following command.  
+**$ python main.py <Stock_Brand>**
 
 
