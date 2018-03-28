@@ -1,5 +1,6 @@
 #-*-coding: utf-8 -*-
 import sys
+import csv
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,6 +8,7 @@ import getCell
 import getTime
 import datetime
 import matplotlib
+import Tkinter
 from datetime import datetime, date, time 
 from datetime import timedelta
 from pandas	import Series, DataFrame
@@ -29,11 +31,7 @@ now = datetime.now()
 start =	datetime(now.year,now.month,now.day - 10)
 end	= datetime(now.year,now.month,now.day)
 
-#now_source = datetime.now().strftime('%Y-%m-%d')
-#now = datetime.strptime(now_source,'%Y-%m-%d %H:%M:%S')
-#start = now
-#end_culc = now - timedelta(days=-5)
-#end 	= end_culc.strftime('%Y-%m-%d')
-
 getStockValue_class = getValue()
 getStockValue_class.read(brand,start,end)
+getStockValue_class.plot(brand,start,end)
+
