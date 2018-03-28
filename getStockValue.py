@@ -8,8 +8,8 @@ class getValue:
 	def read(self,brand,d1,d2) :	
 		f = web.DataReader(brand,'morningstar',d1,d2)
 		f['Close'].plot(title=brand,grid=True)
-		plt.savefig('data/' + brand + '.png')
-		f.to_csv(brand + '.csv')
+		plt.savefig('data/img/' + brand + '.png')
+		f.to_csv('data/csv/' + brand + '.csv')
 		print(brand + '.csvを出力しました.')
 		print(f.head(10))	
 
