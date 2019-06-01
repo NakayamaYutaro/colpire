@@ -8,7 +8,7 @@ Yahoo!, Google Options, Google Quotes and EDGAR have been immediately deprecated
 And it cannot create system on print Japanse Brand. 
 So we create system through New York Stock Exchange(NYSE) and morningstar API.
 
-###追記
+### 追記
 2019/6/1 Yahoo financeAPIがいつのまにか使えるようになっていたので、プログラムを更新しました。 
 <https://pandas-datareader.readthedocs.io/en/latest/>
 
