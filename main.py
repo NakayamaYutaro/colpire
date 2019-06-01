@@ -9,7 +9,7 @@ import getTime
 import datetime
 import matplotlib
 #import Tkinter
-import quandl
+#import quandl
 import tkinter
 from datetime import datetime, date, time 
 from datetime import timedelta
@@ -22,7 +22,7 @@ from getStockValue import getValue
 argvs = sys.argv
 argc = len(argvs)
 
-quandl_data = 
+#quandl_data 
 
 if(argc!=2):
 	print('Usage #python %s brand' % argvs[0])
