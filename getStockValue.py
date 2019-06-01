@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 class getValue:
 	def read(self,brand,d1,d2) :	
-		f = web.DataReader(brand,'morningstar',d1,d2)
+		f = web.DataReader(brand,'yahoo',d1,d2)
 		f['Close'].plot(title=brand,grid=True)
 		plt.savefig('data/img/' + brand + '.png')
 		f.to_csv('data/csv/' + brand + '.csv')
@@ -14,6 +14,7 @@ class getValue:
 		print(f.head(10))	
 
 	def plot(self,brand,d1,d2) :
-		f = web.DataReader(brand,'morningstar',d1,d2)
+		#f = web.DataReader(brand,'google',d1,d2)
+		f = web.DataReader(brand,'yahoo',d1,d2)
 		f.plot()
 		plt.show()
