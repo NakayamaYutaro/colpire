@@ -8,7 +8,9 @@ import getCell
 import getTime
 import datetime
 import matplotlib
-import Tkinter
+#import Tkinter
+import quandl
+import tkinter
 from datetime import datetime, date, time 
 from datetime import timedelta
 from pandas	import Series, DataFrame
@@ -20,15 +22,17 @@ from getStockValue import getValue
 argvs = sys.argv
 argc = len(argvs)
 
+quandl_data = 
+
 if(argc!=2):
-	print 'Usage #python %s brand' % argvs[0]
+	print('Usage #python %s brand' % argvs[0])
 	quit()
 
-print 'The latest brand of %s ...' % argvs[1]
+print('The latest brand of %s ...' % argvs[1])
 brand = argvs[1]
 
 now = datetime.now()
-start =	datetime(now.year,now.month,now.day - 10)
+start =	datetime(now.year,now.month-1,now.day)
 end	= datetime(now.year,now.month,now.day)
 
 getStockValue_class = getValue()
