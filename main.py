@@ -8,12 +8,12 @@ import getCell
 import getTime
 import datetime
 import matplotlib
-#import Tkinter
 import quandl
 import tkinter
+from qdlReadData import tes 
 from datetime import datetime, date, time 
 from datetime import timedelta
-from pandas	import Series, DataFrame
+from pandas import Series, DataFrame
 from pandas_datareader.data import DataReader
 from getTime import getYDH
 from getCell import getTable
@@ -22,7 +22,9 @@ from getStockValue import getValue
 argvs = sys.argv
 argc = len(argvs)
 
-quandl_data = 
+#auandl経由からのデータ取得
+#qua = tes()
+#qua.plot_brand('9267') 
 
 if(argc!=2):
 	print('Usage #python %s brand' % argvs[0])
