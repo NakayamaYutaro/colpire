@@ -22,7 +22,7 @@ After change directory to stockTrade/bin
 $ pip install scikit-learn  
 $ pip install quandl   
 $ pip install pandas  
-$ pip install `pandas_datareader`
+$ pip install `pandas_datareader`  
 $ pip install matplotlib inline  
 
 
