@@ -1,5 +1,5 @@
 # stockTrade
-Stock automated trading system by YutaroNakayama
+Stock price analysis system by YutaroNakayama
 This repository is under development.
 ---
 
