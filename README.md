@@ -1,4 +1,4 @@
-# stockTrade
+# stockSurvey
 Stock price analysis system by YutaroNakayama
 This repository is under development.
 ---
