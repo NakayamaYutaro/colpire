@@ -1,4 +1,4 @@
-# stockTrade
+# colpire
 Stock price analysis system by YutaroNakayama
 This repository is under development.
 ---
