@@ -34,7 +34,7 @@ print('The latest brand of %s ...' % argvs[1])
 brand = argvs[1]
 
 now = datetime.now()
-start =	datetime(now.year,now.month-1,now.day)
+start =	datetime(now.year,now.month,now.day-20)
 end	= datetime(now.year,now.month,now.day)
 
 getStockValue_class = getValue()
