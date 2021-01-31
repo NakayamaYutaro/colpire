@@ -25,5 +25,3 @@ def main():
   analysed_sentence = morphological_analysis_default(sentence)
   print(analysed_sentence)
   print(clean_mecab_sentence(analysed_sentence))
-
-main()

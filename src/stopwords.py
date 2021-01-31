@@ -14,3 +14,9 @@ def remove_stopwords(word_list: list, stopwords: list):
     except ValueError:
       pass
   return removed_list
+
+def main():
+  test_sentence = "これはテスト用の文章です。"
+  test_dic = create_dictionary(test_sentence)
+  print(test_dic)
+  print(remove_stopwords(test_dic,stopwords_list))
