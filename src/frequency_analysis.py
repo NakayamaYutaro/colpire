@@ -1,3 +1,6 @@
+#-*- coding: utf-8 -*-
+from stopwords import *
+
 import MeCab
 import collections
 import seaborn as sns
@@ -7,7 +10,7 @@ test_path = "data/bluesky_restart"
 word_class_list = ["名詞","動詞","形容詞","形容動詞","副詞","連体詞","接続詞","感動詞","助動詞","助詞"]
 
 #最頻出トップ20ワード
-def most_words(text_path: str = test_path, word_num: int = 20) -> str:
+def most_words(text_path: str = test_path, word_num: int = 20, stop_words_flag: bool = 1) -> str:
   #ファイルの書き込み用の指定
   f = open(text_path)
   text = f.read() 
@@ -29,15 +32,20 @@ def most_words(text_path: str = test_path, word_num: int = 20) -> str:
         origin = node.feature.split(",")[8]
       words.append(origin)
     node = node.next
-  #品詞別の集計  
+  
+  #最頻出ワードからのstopwordsの削除
+  if stop_words_flag == 1:
+    words = remove_stopwords(words, get_sample_stopwords())
+  else:
+    pass  
+  #品詞別の集計
   col = collections.Counter(words)
   most_words = col.most_common(word_num)
-
   #ファイルオープンの解放
   f.close()
   
   return most_words 
 
 def main():
-  print(most_words(test_path,100))
-
+  print(most_words(test_path,100,0))
+  print(most_words(test_path,100,1))

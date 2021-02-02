@@ -63,12 +63,4 @@ def original_normalize(string: str) -> str:
   ]
   for regex in conversion_table: 
     string = re.sub(r"%s" % regex, "", string)
-  return string
-
-
-
-
-
-
-
- 
+  return string 
