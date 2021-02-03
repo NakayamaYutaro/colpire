@@ -1,10 +1,9 @@
 #-*- coding: utf-8 -*-
 from stopwords import *
+from graph_output import words_bar_graph
 
 import MeCab
 import collections
-import matplotlib.pyplot as plt
-import numpy as np
 
 test_path = "data/bluesky_restart"
 word_class_list = ["名詞","動詞","形容詞","形容動詞","副詞","連体詞","接続詞","感動詞","助動詞","助詞"]
@@ -46,16 +45,8 @@ def most_words(text_path: str = test_path, word_num: int = 20, stop_words_flag: 
   #ファイルオープンの解放
   f.close()
   #棒グラフの出力例
-  left = np.array([words for words,num in most_words])  
-  height = np.array([num for words,num in most_words])  
-  plt.rcParams["figure.figsize"] = (8, 8)
-  plt.bar(left, height, align='center')
-  plt.xticks(rotation=-90)
-  plt.title("最頻出ワードTOP20")
-  plt.xlabel("単語リスト") 
-  plt.ylabel("単語頻出回数")
-  plt.grid(True)
-  plt.show()
+  words_bar_graph(most_words, "最頻出ワードTOP20","単語","頻出回数") 
+    
   return most_words 
 
 def main():
