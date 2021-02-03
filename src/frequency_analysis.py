@@ -2,14 +2,25 @@
 from stopwords import *
 from graph_output import words_bar_graph
 
+import sys
 import MeCab
 import collections
 
 test_path = "data/bluesky_restart"
 word_class_list = ["名詞","動詞","形容詞","形容動詞","副詞","連体詞","接続詞","感動詞","助動詞","助詞"]
 
-#最頻出トップ20ワード
-def most_words(text_path: str = test_path, word_num: int = 20, stop_words_flag: bool = 1) -> str:
+word_num_err_msg_upper= "引数[word_num]の値の上限が超えていたので異常終了しました。"
+word_num_err_msg_lower = "引数[word_num]の値の下限が超えていたので異常終了しました。"
+
+#最頻出トップワード
+def most_words(text_path: str = test_path, word_num: int = 10, stop_words_flag: bool = 1) -> str:
+  #word_numの上限30を超えていないかのチェック
+  if word_num > 30:
+    sys.exit(word_num_err_msg_upper)
+  elif word_num < 1:
+    sys.exit(word_num_err_msg_lower)
+  else:
+    pass
   #ファイルの書き込み用の指定
   f = open(text_path)
   text = f.read() 
@@ -50,7 +61,6 @@ def most_words(text_path: str = test_path, word_num: int = 20, stop_words_flag: 
   return most_words 
 
 def main():
-  print(most_words(test_path,100,0))
-  print(most_words(test_path,20,1))
+  print(most_words(test_path,10,1))
 main()
 
