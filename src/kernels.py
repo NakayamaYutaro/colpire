@@ -1,5 +1,20 @@
 #-*- coding: utf-8 -*-
+import sys
 import numpy as np
+from morphological_analysis import *
+
+def preprocess(text)
+  words = morphological_analysis_wakati(text)   
+  word_to_id = {}
+  id_to_word = {}
+  for word in words:
+    if word not in word_to_id:
+      new_id = len(word_to_id)
+      word_to_id[word] = new_id
+      id_to_word[new_id] = word
+
+  corpus = np.array([word_to_id[w] for w in words])  
+  return corpus, word_to_id, id_to_word  
 
 #共起行列の生成
 def create_coll_matrix(corpus: list, vocab_size: int, window_size: int=1) -> list:
@@ -64,3 +79,12 @@ def ppmi(C, verbose=False, eps=1e-8):
         if cnt % (total//100) == 0:
           print('%.1f%% done' % (100*cnt/total))
   return M
+
+#特異値分解
+def svd(text: str):
+  corpus, word_to_id, id_to_word = preprocess(text)
+  vocab_size = len(id_to_word)
+  C = create_co_matrix(corpus, vocab_size, window_size=1)
+  W = ppmi(C)
+  U, S, V = np.linalg.svd(W)
+  return U, S, V
